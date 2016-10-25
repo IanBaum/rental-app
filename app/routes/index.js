@@ -20,10 +20,27 @@ export default Ember.Route.extend({
       newAnnouncement.save();
       this.transitionTo('index');
     },
+// we call a method on an object here (keys) and pass in that which you'd like to look through (params)
+    // update(rental, params) {
+    //   Object.keys(params).forEach(function(key) {
+    //     if(params[key]!==undefined) {
+    //       rental.set(key,params[key]);
+    //     }
+    //   });
+    //   rental.save();
+    //   this.transitionTo('index');
+    // },
+    //
+    // destroyRental(rental) {
+    //   rental.destroyRecord();
+    //   this.transitionTo('index');
+    // },
 
-    destroyRental(rental){
-      rental.destroyRecord();
+    destroyAnnouncement(announcement) {
+      announcement.destroyRecord();
       this.transitionTo('index');
+
+
     }
   }
 });

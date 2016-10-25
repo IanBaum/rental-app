@@ -18,4 +18,5 @@ export default Ember.Component.extend({
       this.sendAction('saveAnnouncement2', args);
     }
   }
+
 });
