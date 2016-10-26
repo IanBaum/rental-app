@@ -4,7 +4,8 @@ export default Ember.Route.extend({
   model(){
     return Ember.RSVP.hash({
       rentals: this.store.findAll('rental'),
-      announcements: this.store.findAll('announcement')
+      announcements: this.store.findAll('announcement'),
+      reviews: this.store.findAll('review')
     });
   },
 
@@ -18,6 +19,12 @@ export default Ember.Route.extend({
     saveAnnouncement3(args) {
       var newAnnouncement = this.store.createRecord('announcement', args);
       newAnnouncement.save();
+      this.transitionTo('index');
+    },
+
+    saveReview(params) {
+      var newReview = this.store.createRecord('review', params);
+      newReview.save();
       this.transitionTo('index');
     },
 // we call a method on an object here (keys) and pass in that which you'd like to look through (params)

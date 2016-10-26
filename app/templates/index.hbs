@@ -22,5 +22,17 @@ We hope you find exactly what you're looking for in a place to stay.
 {{new-rental saveRental2="saveRental3"}}
 {{new-announcement saveAnnouncement2="saveAnnouncement3"}}
 
+<h2> All Reviews </h2>
+
+<ul>
+  {{#each model.reviews as |review|}}
+    <li>{{review.rating}} - {{review.content}} - by {{review.author}}</li>
+  {{/each}}
+</ul>
+
+{{new-review saveReview="saveReview"}}
+
+<hr>
+
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
